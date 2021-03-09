@@ -1,0 +1,12 @@
+sudo yum install nginx
+dnf install @mysql
+sudo systemctl start mysqld
+sudo systemctl enable mysqld
+mysql_secure_installation 
+dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm 
+dnf module enable php:remi-7.4
+dnf install php php-curl php-bcmath php-dom php-xml php-mbstring php-json
+mv composer.phar /usr/local/bin/composer
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
